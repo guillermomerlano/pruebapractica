@@ -52,14 +52,20 @@ app.get('/api/items', cors(), (req, res) => {
             }
             return 0;
         }
-        
-        request('https://api.mercadolibre.com/categories/' + categorias[0].values[0].id, { json: true }, (err, result3, body) => {
-            if (err) { return console.log(err); }
-            respuesta.categories = result3.body.path_from_root;
-
-            
+        if(categorias[0])
+        {
+            request('https://api.mercadolibre.com/categories/' + categorias[0].values[0].id, { json: true }, (err, result3, body) => {
+                if (err) { return console.log(err); }
+                respuesta.categories = result3.body.path_from_root;
+    
+                
+                res.send(JSON.stringify(respuesta));
+            });
+        }
+        else{
             res.send(JSON.stringify(respuesta));
-        });
+        }
+
 
     });
 
