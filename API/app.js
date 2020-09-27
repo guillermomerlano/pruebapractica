@@ -79,10 +79,19 @@ app.get('/api/items/:id', cors(), (req, res) => {
         respuesta.description = "Encontrar";
 
 
-        request('https://api.mercadolibre.com/items/' + qry + '/description', { json: true }, (err, result, body) => {
+        request('https://api.mercadolibre.com/items/' + qry + '/description', { json: true }, (err, result2, body) => {
             if (err) { return console.log(err); }
-            respuesta.description = result.body.plain_text;
-            res.send(JSON.stringify(respuesta));
+            respuesta.description = result2.body.plain_text;
+
+
+            request('https://api.mercadolibre.com/categories/' + result.body.category_id , { json: true }, (err, result3, body) => {
+                if (err) { return console.log(err); }
+                respuesta.categories =result3.body.path_from_root;
+    
+                
+                res.send(JSON.stringify(respuesta));
+            });
+
         });
 
 
@@ -90,4 +99,4 @@ app.get('/api/items/:id', cors(), (req, res) => {
 
 });
 
-app.listen(PORT, () => console.log("Escuchando"));
+app.listen(PORT, () => console.log("Escuchando en el puerto " + PORT));
