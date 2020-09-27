@@ -29,7 +29,7 @@ const Resultados = () => {
                     return <div key={x.id} className="resultado">
                         <div className="imagenresultados" ><a href={'/items/'+x.id}><img className="imgresultados"  src={x.picture} /></a></div>
                         <div className="precio"><span><b><Precio valor={x.price.amount}/> </b> <b className="enviogratis" hidden={!x.free_shipping} ><img src={freeshipping} /></b> <div><a className='vinculo' href={'/items/'+x.id}>{x.title}<br></br>Completo Unico!</a></div></span></div>
-                        <div className="vendedor">{x.id}</div>
+                        <div className="vendedor">{x.city}</div>
                     </div>;
                 })}
 

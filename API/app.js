@@ -33,6 +33,7 @@ app.get('/api/items', cors(), (req, res) => {
             item.price.currency = x.currency_id;
             item.price.amount = x.price;
             item.price.decimals = 'Información no disponible';
+            item.city=x.address.city_name;
             respuesta.items.push(item);
         });
         var categorias = [];
