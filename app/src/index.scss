@@ -1,0 +1,164 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+html{
+  margin-top: -10px;
+}
+body{  
+
+  margin-top: 0; 
+  margin-left: 0; 
+  margin-right: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.body{  
+
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;    
+  background: rgba(0,0,0,.1); 
+  margin-top: 0; 
+  margin-left: 0; 
+  margin-right: 0;
+  padding-bottom: 60px;
+
+}
+
+.header{
+  background-color: #FFE600; box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); height: 50px;
+}
+.divbuscar{
+  vertical-align: middle; display: inline-flex; background-color: white; max-width: 900px; width: 93%; float: right; margin-top: 10px;
+}
+.inputbuscar{
+  border-width: 0; height: 30px; width: 100%; float: right;
+}
+
+.botonbuscar{
+  background-color: rgba(128, 128, 128, 0.185); border-width: 0; cursor: pointer; float: right;
+}
+
+.miga{
+  margin-top: 14px; margin-bottom: 16px; color: gray; font-size: 14px;
+}
+
+.contenedor{
+  max-width: 900px; width: 80%;  margin:auto; margin-top: 10px;
+}
+
+.contenedorresultados{
+ max-width: 900px; padding: 0px; background-color: #EEEEEE; 
+}
+
+.contenedordetalle{
+  max-width: 900px; padding: 0px; background-color:white;
+ }
+
+
+.resultado{
+  background-color: white;  margin-bottom: 1px; 
+}
+
+.imagen
+{
+  
+  display: inline-flex; vertical-align: middle; margin-top: 10px;
+}
+.imagenresultados
+{
+  
+  display: inline-flex; vertical-align: middle; padding: 16px;
+}
+.imgresultados{
+  border-radius: 4px;  width: 180px; height:180px;
+}
+.imagengrande
+{
+  display: inline-flex; vertical-align: middle; padding: 32px;
+}
+.detalleyprecio
+{
+  display: inline-flex; vertical-align: middle;  width: 240px; align-self: flex-end; float: right; margin-top: 32px; margin-right: 32px;
+}
+
+.botoncomprar
+{
+  background-color: #3483FA;
+  color: white;
+  border-width: 0;
+  width: 240px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.l1{
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.l2{
+  font-size: 24px;
+  font-weight: bold;
+}
+.l3{
+  font-size: 46px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.precio
+{
+  display: inline-flex;
+  vertical-align: top;
+  margin-left: 0px;
+  padding-top: 32px;
+  font-size: 24px;
+}
+.valorprecio
+{
+font-weight: bold;
+}
+.enviogratis{
+  color: rgb(82, 165, 4);
+}
+
+.vendedor
+{
+  display: inline-flex;
+  align-self: flex-end;
+  float: right;
+  color: gray;
+  font-size: small;
+  width: 140px;
+  height: 70px;
+  padding-top: 32px;
+  font-size: 12;
+}
+
+.descripcion
+{
+  width: 600px;
+  color: grey;
+  margin-left: 32px;
+  font-size: 16px;
+  padding-bottom: 32px;
+}
+.descripciondelproducto
+{
+  margin-top: 90px;
+  width: 600px;
+  margin-bottom: 32px;
+  margin-left: 32px;
+  font-weight: bold;
+  font-size: 28px;
+  color: grey;
+}
+.vinculo 
+{
+  color: black;
+  text-decoration:none;
+  font-size: 18px;
+  float: left;
+  margin-top: 32px;
+}

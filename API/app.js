@@ -15,14 +15,14 @@ app.get('/', (req, res) => {
 
 app.get('/api/items', cors(), (req, res) => {
     respuesta = { author: { name: 'Guillermo', lastname: 'Merlano' } };
-    var qry = req.query.search;
+    var qry = req.query.q;
     respuesta.items = [];
     respuesta.categories = []
 
     request('https://api.mercadolibre.com/sites/MLA/search?q=' + qry, { json: true }, (err, result, body) => {
         if (err) { return console.log(err); }
 
-        result.body.results.slice(0, 9).map(x => {
+        result.body.results.slice(0, 4).map(x => {
             var item = {};
             item.id = x.id;
             item.title = x.title;
@@ -38,16 +38,28 @@ app.get('/api/items', cors(), (req, res) => {
         var categorias = [];
 
         //solo se deben tomar en cuenta los items de tipo category no se sabe si hay mas de uno por eso se hace un filtro:
-        //No se dejó el resultado como un array de string porque la app necesita también las categorías más repetidas para hacer el breadcrumb
         categorias = result.body.available_filters.filter(x => x.id == 'category');
+        categorias.sort(fordenar);
+ 
+    
+        function fordenar(a, b) {
+            if (a.results < b.results) {
+                return 1;
+            }
+            if (a.results > b.results) {
+                return -1;
+            }
+            return 0;
+        }
+        
+        request('https://api.mercadolibre.com/categories/' + categorias[0].values[0].id, { json: true }, (err, result3, body) => {
+            if (err) { return console.log(err); }
+            respuesta.categories = result3.body.path_from_root;
 
-        categorias.map(categoria => {
-            categoria.values.map(valor => {
-                respuesta.categories.push(valor);
-            });
+            
+            res.send(JSON.stringify(respuesta));
         });
 
-        res.send(JSON.stringify(respuesta));
     });
 
 });
