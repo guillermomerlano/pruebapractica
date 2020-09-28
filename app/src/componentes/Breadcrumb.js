@@ -8,7 +8,7 @@ const Breadcrumb = (props) => {
         <div className="contenedor">
             <div className="miga">
                 {categorias && categorias.slice(0, 4).map(categoria => {
-                    return categoria.name + ' | ';
+                    return categoria + ' | ';
                 })}
             </div>
         </div>

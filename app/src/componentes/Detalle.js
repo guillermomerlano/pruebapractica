@@ -15,14 +15,12 @@ const Detalle = (props) => {
 
     var categorias = [];
 
-    if (resultado.categories && resultado.categories[0]) {
-        categorias = resultado.categories;
-    }
+
 
     return (
 
         <>
-            <Breadcrumb categorias={categorias} />
+            <Breadcrumb categorias={resultado && resultado.categories} />
 
             <div className="contenedor contenedordetalle" >
                 <div className="imagengrande"><img src={resultado.picture} /></div>
